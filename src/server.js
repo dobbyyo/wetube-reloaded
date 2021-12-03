@@ -26,6 +26,9 @@ app.use(
 
 app.use(localsMiddleware);
 app.use("/uploads", express.static("uploads"));
+app.use("/static", express.static("assets"));
+// /static은 브라우저에 보여지는것  /assets로 해도 상관없음.
+
 app.use("/", rootRouter);
 app.use("/videos", videoRouter);
 app.use("/users", userRouter);
