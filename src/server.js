@@ -30,6 +30,13 @@ app.use("/uploads", express.static("uploads"));
 app.use("/static", express.static("assets"));
 // /static은 브라우저에 보여지는것  /assets로 해도 상관없음.
 
+app.use((req, res, next) => {
+  res.header("Cross-Origin-Embedder-Policy", "require-corp");
+  res.header("Cross-Origin-Opener-Policy", "same-origin");
+  next();
+});
+//ffmpeg 오류에 대한 것 고치기위해
+
 app.use("/", rootRouter);
 app.use("/videos", videoRouter);
 app.use("/users", userRouter);
