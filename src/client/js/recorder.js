@@ -113,6 +113,6 @@ const init = async () => {
   video.play();
 };
 
-init();
+// init();
 
 actionBtn.addEventListener("click", handleStart);

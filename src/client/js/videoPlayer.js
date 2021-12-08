@@ -14,7 +14,7 @@ const videoControls = document.querySelector("#videoControls");
 
 let controlsTimeout = null;
 let controlsMovementTimeout = null;
-let = volumeValue = 0.5;
+let volumeValue = 0.5;
 video.volume = volumeValue;
 let videoExit = false;
 
