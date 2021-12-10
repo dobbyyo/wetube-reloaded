@@ -11,6 +11,7 @@ const fullScreenBtn = document.querySelector("#fullScreen");
 const fullscreenBtnIcon = fullScreenBtn.querySelector("i");
 const videoContainer = document.querySelector("#videoContainer");
 const videoControls = document.querySelector("#videoControls");
+const textarea = document.querySelector("textarea");
 
 let controlsTimeout = null;
 let controlsMovementTimeout = null;
@@ -104,7 +105,9 @@ const handleMouseLeave = () => {
 const handleKeytimeMove = (e) => {
   switch (e.keyCode) {
     case 32: //space bar
-      handlePlayClick();
+      if (e.target !== textarea) {
+        handlePlayClick();
+      }
       break;
     case 39: //오른쪽 방향키
       video.currentTime = video.currentTime + 5;

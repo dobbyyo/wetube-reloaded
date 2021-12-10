@@ -6,6 +6,7 @@ import {
   getUpload,
   postUpload,
   deleteVideo,
+  deleteComment,
 } from "../controllers/videoController";
 import { protectorMiddleware, videoUpload } from "../middlewares";
 
@@ -26,7 +27,6 @@ videoRouter
   .all(protectorMiddleware)
   .get(getUpload)
   .post(videoUpload.fields([{ name: "video" }, { name: "thumb" }]), postUpload);
-
 // videoRouter.get("/:id(\\d+)/edit", getEdit);
 // videoRouter.post("/:id(\\d+)/edit", postEdit);
 // videoRouter.get("/upload",getUpload);
